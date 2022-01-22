@@ -1,5 +1,9 @@
 call plug#begin()
 Plug 'sainnhe/sonokai'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'luochen1990/rainbow'
+Plug 'preservim/nerdtree'
 Plug 'honza/vim-snippets'
 Plug 'vim-test/vim-test'
 Plug 'vim-airline/vim-airline'
@@ -47,7 +51,7 @@ set splitright       " Create the vertical splits to the right
 set splitbelow       " Create the horizontal splits below
 set autoread         " Update vim after file update from outside
 set relativenumber
-set tw=80
+set tw=100
 filetype on          " Detect and set the filetype option and trigger the FileType Event
 filetype plugin on   " Load the plugin file for the file type, if any
 filetype indent on   " Load the indent file for the file type, if any
@@ -98,18 +102,21 @@ endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
+nmap <silent> <leader>rt :TestNearest<CR>
+nmap <silent> <leader>rT :TestFile<CR>
+nmap <silent> <leader>ra :TestSuite<CR>
+nmap <silent> <leader>rl :TestLast<CR>
+nmap <silent> <leader>rv :TestVisit<CR>
 
+" Rainbow parentheses
+let g:rainbow_active = 1
 
-" Auto comands ---
-
+"Tests ---
+let test#strategy = "neovim"
 
 " Themes ---
-let g:sonokai_style = 'andromeda'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 0
-let g:sonokai_diagnostic_line_highlight = 1
-let g:sonokai_current_word = 'bold'
-colorscheme sonokai
+let g:tokyonight_style = 'night'
+colorscheme tokyonight
 let g:airline_theme = 'sonokai'
 
 
