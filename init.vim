@@ -137,12 +137,15 @@ map <C-l> <C-w>l
 
 " ALE ---
 let g:ale_linters = {
+\   'cpp': [],
+\   'c': [],
 \}
 
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
+\   'cpp': ['clang-format'],
+\   'c': ['clang-format'],
 \}
-
 let g:ale_fix_on_save = 1
 
 " NeoVim ---
