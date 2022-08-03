@@ -158,7 +158,7 @@ endif
 
 
 " COC ---
-let g:coc_global_extensions = ['coc-snippets','coc-explorer', 'coc-bloc']
+let g:coc_global_extensions = ['coc-snippets','coc-explorer', 'coc-bloc', 'coc-clangd']
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
