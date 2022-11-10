@@ -79,7 +79,12 @@ nmap tt :q<CR>
 " Call command shortcut
 nmap tc :!
 nmap tn :set relativenumber!<CR>
-
+inoremap <C-s> <esc>:w<cr>                 " save files
+nnoremap <C-s> :w<cr>
+inoremap <C-d> <esc>:wq!<cr>               " save and exit
+nnoremap <C-d> :wq!<cr>
+inoremap <C-q> <esc>:qa!<cr>               " quit discarding changes
+nnoremap <C-q> :qa!<cr>
 " Some of these key choices were arbitrary;
 " it's just an example.
 nnoremap <leader>fa :FlutterRun<cr>
@@ -115,7 +120,7 @@ let g:rainbow_active = 1
 let test#strategy = "neovim"
 
 " Themes ---
-let g:tokyonight_style = 'night'
+let g:tokyonight_style = 'storm'
 colorscheme tokyonight
 let g:airline_theme = 'sonokai'
 
